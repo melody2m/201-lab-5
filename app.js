@@ -124,11 +124,28 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(testArray){ //eslint-disable-line
+function multiplyArray(testArray){ 
+  var prodsArray = [1];
+  var q5list = [];
 
+  for(var i = 0; i < testArray.length; i++) {
+    var arrayProd = multiply (testArray[i], prodsArray[i]);
+    prodsArray.push(arrayProd[0]);
+    if (i > 0) {
+      q5list = q5list + ',' + testArray[i];
+    }
+  }
+  
+  console.log(q5list);
+
+  var q5Msg = 'The numbers ' + testArray [0] + q5list + ' have a product of ' + arrayProd[0] + '.';
+
+  console.log (q5Msg);
+
+  return[arrayProd[0], q5Msg];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
