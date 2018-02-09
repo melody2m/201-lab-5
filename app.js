@@ -67,8 +67,6 @@ function sumAndMultiply(a,b,c){
   return[finalSum, finalProd, sumMesg, prodMesg]
 }
 
-
-
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
 
@@ -87,12 +85,31 @@ Test this function by hand in the console to get it working, and when you think 
 // TODO: Write your code here
 var testArray = [2,3,4]; //eslint-disable-line
 
-function sumArray(testArray){ //eslint-disable-line
 
+function sumArray(testArray){ 
+
+  var sumsArray = [0];
+  var q4list = [];
+
+  for(var i = 0; i < testArray.length; i++) {
+    var arraySum = sum (testArray[i], sumsArray[i]);
+    sumsArray.push(arraySum[0]);
+    if (i > 0) {
+      q4list = q4list + ',' + testArray[i];
+    }
+  }
+  
+  console.log(q4list);
+
+  var q4Msg = testArray [0] + q4list + ' was passed in as an array of numbers, and ' + arraySum[0] + ' is their sum.'
+
+  console.log (q4Msg);
+
+  return[arraySum[0], q4Msg];
 }
 
 // TODO: Here is the test for sumArray(); uncomment it to run it
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
